@@ -1,12 +1,10 @@
-FROM ubuntu:22.04
+FROM python:3.11-slim
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y \
-    bash coreutils bc \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y tk && rm -rf /var/lib/apt/lists/*
 
-COPY controller /app/controller
-RUN chmod +x /app/controller/*.sh
+COPY app /app/app
+COPY config /app/config
 
-ENTRYPOINT ["/app/controller/menu.sh"]
+CMD ["python", "/app/app/main.py"]

@@ -6,7 +6,7 @@ docker info >nul 2>&1 || (
   timeout /t 25 >nul
 )
 
-docker build -t pdf-recovery .
-docker run -it pdf-recovery
+docker build -t pdf-recovery-framework .
+docker run -it --rm pdf-recovery-framework
 
 pause

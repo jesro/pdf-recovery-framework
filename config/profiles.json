@@ -1,0 +1,18 @@
+{
+  "bank_bill": {
+    "tool": "hashcat",
+    "attack": "mask",
+    "letters": 4,
+    "digits": 4
+  },
+  "statement": {
+    "tool": "pdfrip",
+    "attack": "date"
+  },
+  "custom": {
+    "tool": "hashcat",
+    "attack": "mask",
+    "letters": 2,
+    "digits": 2
+  }
+}
