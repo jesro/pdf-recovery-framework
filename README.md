@@ -1,4 +1,3 @@
-````markdown
 # PDF Recovery Web Framework
 
 A **web-based, configurable framework** for planning PDF password recovery tasks  
@@ -146,6 +145,3 @@ http://localhost:8000
 
 * Educational / research use only
 * Use responsibly and only on files you own
-
-```
-```
