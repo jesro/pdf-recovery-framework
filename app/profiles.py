@@ -1,12 +1,10 @@
 import json
-from pathlib import Path
 
-PROFILE_PATH = Path("/app/config/profiles.json")
+with open("config/profiles.json") as f:
+    profiles = json.load(f)
 
-def load_profiles():
-    with PROFILE_PATH.open() as f:
-        return json.load(f)
+def get_profile(name):
+    return profiles.get(name)
 
-def save_profiles(data):
-    with PROFILE_PATH.open("w") as f:
-        json.dump(data, f, indent=2)
+def list_profiles():
+    return list(profiles.keys())

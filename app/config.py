@@ -1,13 +1,7 @@
-from pathlib import Path
+import configparser
 
-def load_config():
-    config = {}
-    path = Path("/app/config/defaults.conf")
-    with path.open() as f:
-        for line in f:
-            line = line.strip()
-            if not line or line.startswith("#"):
-                continue
-            k, v = line.split("=", 1)
-            config[k] = v
-    return config
+config = configparser.ConfigParser()
+config.read("config/defaults.conf")
+
+def get_default(key):
+    return config["DEFAULT"].get(key)

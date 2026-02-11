@@ -1,6 +1,9 @@
 import time
 
-def simulate_progress(callback, steps=100, delay=0.05):
-    for i in range(steps + 1):
-        callback(i)
-        time.sleep(delay)
+def simulate_progress(total=100, interval=0.05):
+    """
+    Generator to simulate progress (0-100)
+    """
+    for i in range(total+1):
+        yield i
+        time.sleep(interval)

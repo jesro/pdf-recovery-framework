@@ -1,17 +1,15 @@
-def build_plan(tool, attack, pdf_path, letters=0, digits=0):
-    if tool == "hashcat" and attack == "mask":
-        mask = "?l" * letters + "?d" * digits
-        return {
-            "tool": "hashcat",
-            "command": f"hashcat -a 3 <hash> \"{mask}\"",
-            "pdf": pdf_path
-        }
-
-    if tool == "pdfrip":
-        return {
-            "tool": "pdfrip",
-            "command": f"pdfrip -f \"{pdf_path}\" --{attack}",
-            "pdf": pdf_path
-        }
-
-    return {"error": "Invalid plan"}
+def build_plan(profile, file_path):
+    letters = profile["letters"]
+    digits = profile["digits"]
+    tool = profile["tool"]
+    attack = profile["attack"]
+    
+    plan = {
+        "tool": tool,
+        "attack": attack,
+        "letters": letters,
+        "digits": digits,
+        "file": file_path,
+        "command_preview": f"{tool} -a {attack} -1 ?l?d -i {file_path} ?1"  # Example
+    }
+    return plan

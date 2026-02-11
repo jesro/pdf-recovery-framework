@@ -1,10 +1,11 @@
-def estimate(letters, digits, cpu_rate, gpu_rate):
-    combos = (26 ** letters) * (10 ** digits)
-    cpu_time = combos / cpu_rate
-    gpu_time = combos / gpu_rate
-
-    return {
-        "combinations": combos,
-        "cpu_seconds": int(cpu_time),
-        "gpu_seconds": int(gpu_time)
-    }
+def estimate_time(letters, digits, speed=1000):
+    """
+    Estimate time in seconds.
+    letters: number of letters
+    digits: number of digits
+    speed: attempts per second (simulation)
+    """
+    from math import pow
+    total_combinations = pow(26, letters) * pow(10, digits)
+    seconds = total_combinations / speed
+    return seconds

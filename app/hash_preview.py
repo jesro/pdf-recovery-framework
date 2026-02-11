@@ -1,14 +1,5 @@
-from pathlib import Path
-
-def preview_pdf(pdf_path):
-    if not pdf_path or not Path(pdf_path).exists():
-        return {"error": "No PDF selected"}
-
-    # Lightweight inspection (no cracking)
-    return {
-        "encrypted": True,
-        "encryption_type": "Standard PDF Security",
-        "algorithm": "AES (unknown strength)",
-        "supported_tools": ["pdfrip", "hashcat"],
-        "notes": "Preview only – no password data extracted"
-    }
+def preview(file_path):
+    # For demo: show first 4 bytes of PDF as hash-like string
+    with open(file_path, "rb") as f:
+        content = f.read(16)
+    return content.hex()

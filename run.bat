@@ -1,12 +1,9 @@
 @echo off
-echo Starting PDF Recovery Framework...
+echo ================================
+echo Starting PDF Recovery Web Framework...
+echo ================================
 
-docker info >nul 2>&1 || (
-  start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
-  timeout /t 25 >nul
-)
-
-docker build -t pdf-recovery-framework .
-docker run -it --rm pdf-recovery-framework
+docker build -t pdf-recovery-web .
+docker run -p 8000:8000 pdf-recovery-web
 
 pause
