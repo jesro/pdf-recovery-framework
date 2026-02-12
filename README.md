@@ -42,7 +42,44 @@ Suitable for:
 
 ---
 
+## 🤖 Contribute with AI
+
+This project actively welcomes **AI-assisted contributions**.
+
+You are encouraged to use tools like ChatGPT, GitHub Copilot, or other AI systems to:
+
+- Improve documentation
+- Refactor or optimize code
+- Suggest new estimation models
+- Enhance UI/UX
+- Add new profiles or planning strategies
+- Improve security explanations
+- Expand educational features
+
+### AI Contribution Guidelines
+
+If you used AI to help with your contribution:
+
+- ✅ Review and fully understand the generated code  
+- ✅ Test everything before submitting  
+- ✅ Ensure the logic is transparent and explainable  
+- ✅ Clearly describe what your contribution does  
+- ✅ Mention in your PR if AI was used (optional but appreciated)
+
+This project values:
+
+- Transparency  
+- Educational clarity  
+- Security awareness  
+- Clean, maintainable logic  
+
+AI is a tool — contributors remain responsible for their submissions.
+
+---
+
 ## 📁 Project Structure
+
+```
 
 pdf-recovery-framework/
 │
@@ -67,6 +104,8 @@ pdf-recovery-framework/
 └── config/
   ├── defaults.conf
   └── profiles.json
+
+```
 
 ---
 
